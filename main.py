@@ -36,7 +36,7 @@ bnb_config = BitsAndBytesConfig(load_in_8bit=True)
 
 base = AutoModelForCausalLM.from_pretrained(
     model_name,
-    device_map="auto",  # ✅ 自动放到 GPU
+    device_map="auto",
     quantization_config=bnb_config
 )
 
@@ -58,10 +58,10 @@ args = TrainingArguments(
     num_train_epochs=3,
     warmup_steps=200,
     logging_steps=50,
-    evaluation_strategy="epoch",
+    eval_strategy="epoch",
     gradient_accumulation_steps=2,
     fp16=True, 
-    report_to="none",  # 如需 W&B 再改为 "wandb"
+    report_to="none",  
     push_to_hub=False
 )
 
