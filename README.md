@@ -102,6 +102,6 @@ accelerate launch run.py --config ./configs/train_config.yaml
 
 Below is a screenshot of the Streamlit interface generating a headline.
 
-<img src="./sample.png" alt="Chatbot UI" width="1200" height="600"/>
+<img src="./sample.png" alt="Chatbot UI" width="1000" height="500"/>
 
 Qualitatively, the LoRA-quantized model produces concise, fluent headlines
