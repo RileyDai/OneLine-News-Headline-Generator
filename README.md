@@ -79,9 +79,9 @@ Use the left sidebar to set the timestamp of the model you wish to load, adjust 
 
 ### 1. Distributed Preprocessing & Training Pipelines
 
-    - datasets.map(..., num_proc=N) utilises N CPU processes for tokenisation.
+- datasets.map(..., num_proc=N) utilises N CPU processes for tokenisation.
 
-    - Training is wrapped by Accelerate, so running with multiple GPUs is as simple as:
+- Training is wrapped by Accelerate, so running with multiple GPUs is as simple as:
 
 ```bash
 accelerate launch run.py --config ./configs/train_config.yaml
@@ -89,12 +89,12 @@ accelerate launch run.py --config ./configs/train_config.yaml
 
 ### 2. Chatbot GUI
 
-    - ui.py delivers a full-featured Streamlit web app:
+- ui.py delivers a full-featured Streamlit web app:
 
-        - One-click model loading (with caching)
-        - Sliders for temperature and top-p
-        - Live status / error messages
-        - Example articles for quick testing
+    - One-click model loading (with caching)
+    - Sliders for temperature and top-p
+    - Live status / error messages
+    - Example articles for quick testing
 
 ---
 
@@ -102,6 +102,6 @@ accelerate launch run.py --config ./configs/train_config.yaml
 
 Below is a screenshot of the Streamlit interface generating a headline.
 
-<img src="./sample.png" alt="Chatbot UI" width="600" height="300"/>
+<img src="./sample.png" alt="Chatbot UI" width="1200" height="600"/>
 
 Qualitatively, the LoRA-quantized model produces concise, fluent headlines
