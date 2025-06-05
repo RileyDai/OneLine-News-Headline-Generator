@@ -1,3 +1,6 @@
 outputs/
 headline-lora/
+models/
 jobscript.sh
+v1.py
+result.txt
