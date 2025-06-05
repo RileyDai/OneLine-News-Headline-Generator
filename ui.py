@@ -1,4 +1,3 @@
-import os
 import torch
 from transformers import (
     AutoTokenizer,
@@ -44,23 +43,15 @@ def load_model_and_tokenizer(timestamp: str):
         device_map={"": device},
         quantization_config=bnb_config
     )
-
-    lora_cfg = LoraConfig(
-        r=32,
-        lora_alpha=32,
-        lora_dropout=0.05,
-        bias="none",
-        task_type="CAUSAL_LM"
-    )
     
     model = PeftModel.from_pretrained(
         base_model,
-        f"models/lora-xsum-distributed-{timestamp}/adapters", # Path to your saved adapters
+        f"models/lora-xsum-{timestamp}/adapters", # Path to your saved adapters
         device_map={"": device}
     )
     model.eval() 
 
-    tok = AutoTokenizer.from_pretrained(f"models/lora-xsum-distributed-{timestamp}/tokenizer")
+    tok = AutoTokenizer.from_pretrained(f"models/lora-xsum-{timestamp}/tokenizer")
     tok.pad_token = tok.eos_token 
 
     st.write("Model and tokenizer loaded successfully on device:", device)

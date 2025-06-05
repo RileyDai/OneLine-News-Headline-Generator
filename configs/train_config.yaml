@@ -1,0 +1,25 @@
+mode: train
+
+dataset_name: "EdinburghNLP/xsum"
+train_split: "train"
+test_split: "test"
+document_field: "document"
+summary_field: "summary"
+
+model_name: "distilgpt2"
+output_dir: "models/lora-xsum"
+
+train_batch_size: 4
+eval_batch_size: 4
+learning_rate: 2e-4
+epochs: 3
+warmup_steps: 200
+logging_steps: 50
+eval_strategy: "epoch"
+gradient_accumulation_steps: 2
+
+lora_r: 32
+lora_alpha: 32
+lora_dropout: 0.05
+
+num_proc: 8

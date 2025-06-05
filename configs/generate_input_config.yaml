@@ -1,0 +1,14 @@
+mode: generate
+
+model_name: "distilgpt2"
+adapter_dir: "models/lora-xsum"
+
+input_text: "The global economy faces multiple challenges, including persistent inflationary pressures, geopolitical tensions, and supply chain disruptions. Governments and central banks worldwide are implementing measures to address these issues, such as raising interest rates to curb inflation and seeking new trade partners to enhance supply chain resilience. Despite uncertainties, some analysts believe the global economy still has potential for growth recovery with technological innovation and emerging markets expansion."
+
+max_new_tokens: 26
+temperature: 0.8
+top_p: 0.95
+
+lora_r: 32
+lora_alpha: 32
+lora_dropout: 0.05

@@ -1,0 +1,19 @@
+mode: generate
+
+dataset_name: "EdinburghNLP/xsum"
+test_split: "test"
+document_field: "document"
+summary_field: "summary"
+
+model_name: "distilgpt2"
+adapter_dir: "models/lora-xsum"
+
+num_samples: 5
+seed: 2025
+max_new_tokens: 26
+temperature: 0.8
+top_p: 0.95
+
+lora_r: 32
+lora_alpha: 32
+lora_dropout: 0.05
